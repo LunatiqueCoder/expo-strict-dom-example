@@ -1,10 +1,6 @@
-import { useLocalSearchParams } from 'expo-router';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { html, css } from 'react-strict-dom';
 
 export default function Home() {
-  const { institution } = useLocalSearchParams();
-  const insets = useSafeAreaInsets();
   return (
     <html.button
       onClick={() => {
@@ -18,10 +14,6 @@ export default function Home() {
 }
 
 const styles = css.create({
-  container: (height: number) => ({
-    backgroundColor: 'red',
-    transform: `translateY(${height}px)`,
-  }),
   button: {
     backgroundColor: {
       default: 'white',

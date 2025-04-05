@@ -1,7 +1,8 @@
 import { css } from 'react-strict-dom';
 
-import { DARK_MODE } from './constants';
 import { DEFAULT_THEME } from './default.stylex';
+
+export const DARK_MODE = '@media (prefers-color-scheme: dark)';
 
 const BRAND_THEME = {
   primaryText: { default: 'purple', [DARK_MODE]: 'lightpurple' },

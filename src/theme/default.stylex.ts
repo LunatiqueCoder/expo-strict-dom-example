@@ -1,6 +1,6 @@
 import { css } from 'react-strict-dom';
 
-import { DARK_MODE } from './constants';
+export const DARK_MODE = '@media (prefers-color-scheme: dark)';
 
 const TOKENS = {
   primaryText: {
