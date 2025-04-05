@@ -1,0 +1,72 @@
+{
+  "cli": {
+    "version": ">= 12.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "gradleCommand": ":app:assembleDebug"
+      },
+      "ios": {
+        "buildConfiguration": "Debug"
+      },
+      "channel": "development"
+    },
+    "dev-simulator": {
+      "extends": "development",
+      "ios": {
+        "simulator": true
+      }
+    },
+    "staging": {
+      "channel": "staging",
+      "autoIncrement": true,
+      "android": {
+        "buildType": "apk",
+        "distribution": "internal"
+      },
+      "ios": {
+        "resourceClass": "large"
+      }
+    },
+    "preview": {
+      "channel": "preview",
+      "extends": "staging",
+      "distribution": "internal",
+      "autoIncrement": false
+    },
+    "preview-simulator": {
+      "extends": "preview",
+      "ios": {
+        "simulator": true
+      }
+    },
+    "production": {
+      "channel": "production",
+      "autoIncrement": true,
+      "ios": {
+        "resourceClass": "large"
+      }
+    }
+  },
+  "submit": {
+    "base": {
+      "ios": {
+        "ascAppId": ""
+      }
+    },
+    "staging": {
+      "extends": "base",
+      "android": {
+        "track": "internal"
+      }
+    },
+    "production": {
+      "extends": "base"
+    }
+
+  }
+}
